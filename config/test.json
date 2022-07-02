@@ -1,0 +1,22 @@
+{
+    "token_name" : "DholdCoin",
+    "token_symbol" : "DHC",
+    "token_decimal" : "18",
+    "token_total_supply" : "100000000",
+    "token_owner" : "0x3424B1FB1d455aDB03C02CC5C78F14641C07ebc3",
+    
+    "agreement_token_name" : "DholdCoin1",
+    "agreement_token_symbol" : "DHC1",
+    "agreement_token_decimal" : "18",
+    "agreement_token_total_supply" : "1000000",
+    "agreement_quorum" : "2",
+    "agreement_voters" : ["0x3424B1FB1d455aDB03C02CC5C78F14641C07ebc3","0xaC074051e6bf884682655Cc4f450A3c3312Dddbd"],
+    "agreement_max_delay" : "1",
+    "agreement_min_lock_duration" : "2",
+    
+    "stable_token_name" : "DholdCoin1",
+    "stable_token_symbol" : "DHC",
+    "stable_token_decimal" : "18",
+    "stable_token_total_supply" : "100000000",
+    "stable_token_owner" : "0x3424B1FB1d455aDB03C02CC5C78F14641C07ebc3"
+}
