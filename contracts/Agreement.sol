@@ -1,4 +1,3 @@
-```solidity
 // SPDX-License-Identifier: MIT
 // Author: Yaghoub Adelzadeh
 // GitHub: https://www.github.com/dappteacher
