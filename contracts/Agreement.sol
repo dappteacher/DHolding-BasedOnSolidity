@@ -144,4 +144,3 @@ contract Agreement is Governable, ReentrancyGuard {
         stableCoin.transfer(_to, balance);
     }
 }
-```
