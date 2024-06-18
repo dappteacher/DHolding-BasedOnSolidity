@@ -1,22 +1,19 @@
 // SPDX-License-Identifier: MIT
+// Author: Yaghoub Adelzadeh
+// GitHub: https://www.github.com/dappteacher
 
-pragma solidity ^0.8.0;
+pragma solidity ^0.8.25;
 
-/**
- * @dev Provides information about the current execution context, including the
- * sender of the transaction and its data. While these are generally available
- * via msg.sender and msg.data, they should not be accessed in such a direct
- * manner, since when dealing with meta-transactions the account sending and
- * paying for execution may not be the actual sender (as far as an application
- * is concerned).
- *
- * This contract is only required for intermediate, library-like contracts.
- */
+// Abstract contract to provide information about the current execution context.
 abstract contract Context {
+    // Function to get the address of the sender of the current call.
+    // @return address The address of the sender.
     function _msgSender() internal view virtual returns (address) {
         return msg.sender;
     }
 
+    // Function to get the calldata of the current call.
+    // @return bytes The calldata of the current call.
     function _msgData() internal view virtual returns (bytes calldata) {
         return msg.data;
     }
