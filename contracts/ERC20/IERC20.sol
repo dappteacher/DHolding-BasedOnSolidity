@@ -1,11 +1,11 @@
 // SPDX-License-Identifier: MIT
+// Author: Yaghoub Adelzadeh
+// GitHub: https://www.github.com/dappteacher
 
 pragma solidity ^0.8.0;
 
-/**
- * @dev Interface of the ERC20 standard as defined in the EIP.
- */
 interface IERC20 {
+
     /**
      * @dev Emitted when `value` tokens are moved from one account (`from`) to
      * another (`to`).
@@ -73,9 +73,5 @@ interface IERC20 {
      *
      * Emits a {Transfer} event.
      */
-    function transferFrom(
-        address from,
-        address to,
-        uint256 amount
-    ) external returns (bool);
+    function transferFrom(address from, address to, uint256 amount) external returns (bool);
 }
