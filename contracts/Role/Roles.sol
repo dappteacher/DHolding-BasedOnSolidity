@@ -1,41 +1,44 @@
-// SPDX-License-Identifier: UNLICENSED
-pragma solidity ^0.8.0;
+// SPDX-License-Identifier: MIT
+// Author: Yaghoub Adelzadeh
+// GitHub: https://www.github.com/dappteacher
 
-/**
- * @title Roles
- * @dev Library for managing addresses assigned to a Role.
- */
+pragma solidity ^0.8.25;
+
+// Define a library to manage roles in a permissioned system.
 library Roles {
+    // Define a Role struct that stores a mapping of addresses to boolean values.
     struct Role {
         mapping(address => bool) bearer;
     }
 
-    /**
-     * @dev Give an account access to this role.
-     */
+    // Function to add an account to a role.
+    // @param role The Role struct storage pointer.
+    // @param account The address to be added to the role.
     function add(Role storage role, address account) internal {
+        // Ensure the account does not already have the role.
         require(!has(role, account), "Roles: account already has role");
+        // Assign the role to the account.
         role.bearer[account] = true;
     }
 
-    /**
-     * @dev Remove an account's access to this role.
-     */
+    // Function to remove an account from a role.
+    // @param role The Role struct storage pointer.
+    // @param account The address to be removed from the role.
     function remove(Role storage role, address account) internal {
+        // Ensure the account has the role.
         require(has(role, account), "Roles: account does not have role");
+        // Remove the role from the account.
         role.bearer[account] = false;
     }
 
-    /**
-     * @dev Check if an account has this role.
-     * @return bool
-     */
-    function has(Role storage role, address account)
-        internal
-        view
-        returns (bool)
-    {
+    // Function to check if an account has a role.
+    // @param role The Role struct storage pointer.
+    // @param account The address to check.
+    // @return bool True if the account has the role, false otherwise.
+    function has(Role storage role, address account) internal view returns (bool) {
+        // Ensure the account is not the zero address.
         require(account != address(0), "Roles: account is the zero address");
+        // Return whether the account has the role.
         return role.bearer[account];
     }
 }
