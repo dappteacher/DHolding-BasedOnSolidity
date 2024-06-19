@@ -8,28 +8,28 @@ pragma solidity ^0.8.25;
 abstract contract ReentrancyGuard {
 
     // Constants representing the status of the contract.
-    uint256 private constant _NOT_ENTERED = 1;
-    uint256 private constant _ENTERED = 2;
+    uint256 private constant STATUS_NOT_ENTERED = 1;
+    uint256 private constant STATUS_ENTERED = 2;
 
     // Variable to store the current status of the contract.
-    uint256 private _status;
+    uint256 private reentrancyStatus;
 
-    // Constructor to initialize the contract status to _NOT_ENTERED.
+    // Constructor to initialize the contract status to STATUS_NOT_ENTERED.
     constructor() {
-        _status = _NOT_ENTERED;
+        reentrancyStatus = STATUS_NOT_ENTERED;
     }
 
     // Modifier to prevent reentrancy.
     modifier nonReentrant() {
         // Ensure the function is not already entered.
-        require(_status != _ENTERED, "ReentrancyGuard: reentrant call");
-        // Set the status to _ENTERED before executing the function.
-        _status = _ENTERED;
+        require(reentrancyStatus != STATUS_ENTERED, "ReentrancyGuard: reentrant call");
+        // Set the status to STATUS_ENTERED before executing the function.
+        reentrancyStatus = STATUS_ENTERED;
 
         // Execute the function.
         _;
 
-        // Set the status back to _NOT_ENTERED after executing the function.
-        _status = _NOT_ENTERED;
+        // Set the status back to STATUS_NOT_ENTERED after executing the function.
+        reentrancyStatus = STATUS_NOT_ENTERED;
     }
 }
