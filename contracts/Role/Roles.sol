@@ -8,7 +8,7 @@ pragma solidity ^0.8.25;
 library Roles {
     // Define a Role struct that stores a mapping of addresses to boolean values.
     struct Role {
-        mapping(address => bool) bearer;
+        mapping(address => bool) roleMembers;
     }
 
     // Function to add an account to a role.
@@ -18,7 +18,7 @@ library Roles {
         // Ensure the account does not already have the role.
         require(!has(role, account), "Roles: account already has role");
         // Assign the role to the account.
-        role.bearer[account] = true;
+        role.roleMembers[account] = true;
     }
 
     // Function to remove an account from a role.
@@ -28,7 +28,7 @@ library Roles {
         // Ensure the account has the role.
         require(has(role, account), "Roles: account does not have role");
         // Remove the role from the account.
-        role.bearer[account] = false;
+        role.roleMembers[account] = false;
     }
 
     // Function to check if an account has a role.
@@ -39,6 +39,6 @@ library Roles {
         // Ensure the account is not the zero address.
         require(account != address(0), "Roles: account is the zero address");
         // Return whether the account has the role.
-        return role.bearer[account];
+        return role.roleMembers[account];
     }
 }
