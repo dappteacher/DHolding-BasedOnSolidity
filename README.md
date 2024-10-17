@@ -1,6 +1,6 @@
 # Decentral Holding Project and Token Smart Contracts
 
-This repository consists of smart contracts required for DHC projct
+This repository hosts a Solidity-based smart contract solution for decentralized crowdfunding projects. The platform enables companies to issue a primary token, representing the whole company, while also allowing individual projects to create their own tokens with customizable specifications such as name, symbol, and voting rights. Each project operates independently, ensuring decentralized governance and funding transparency. This system is ideal for managing multiple projects under one organization, fostering a scalable, tokenized ecosystem for innovative funding solutions.
 
 #### How to run
 - installation 
